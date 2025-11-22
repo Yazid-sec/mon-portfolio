@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #ef4444;  /* Rouge */
+  --primary-hover: #dc2626;
+
 }
 
 @theme inline {
