@@ -4,13 +4,6 @@ import { useState } from 'react';
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = [
-    { href: '#about', label: 'À propos' },
-    { href: '#skills', label: 'Compétences' },
-    { href: '#projects', label: 'Projets' },
-    { href: '#contact', label: 'Contact' }
-  ];
-
   return (
     <div className="md:hidden">
       {/* Bouton hamburger */}
@@ -23,18 +16,20 @@ export default function MobileMenu() {
 
       {/* Menu déroulant */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-blue-600 shadow-lg">
+        <div className="absolute top-full left-0 w-full bg-[var(--primary-color)] shadow-lg">
           <div className="flex flex-col p-4 font-serif tracking-tight text-lg space-y-4">
-            {menuItems.map((item) => (
-              <a 
-                key={item.href}
-                href={item.href} 
-                className="hover:text-blue-200 transition-colors py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
+            <a href="#about" className="hover:opacity-80 transition-opacity py-2" onClick={() => setIsOpen(false)}>
+              À propos
+            </a>
+            <a href="#skills" className="hover:opacity-80 transition-opacity py-2" onClick={() => setIsOpen(false)}>
+              Compétences
+            </a>
+            <a href="#projects" className="hover:opacity-80 transition-opacity py-2" onClick={() => setIsOpen(false)}>
+              Projets
+            </a>
+            <a href="#contact" className="hover:opacity-80 transition-opacity py-2" onClick={() => setIsOpen(false)}>
+              Contact
+            </a>
           </div>
         </div>
       )}

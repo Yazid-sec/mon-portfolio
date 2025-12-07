@@ -1,199 +1,257 @@
+"use client";
+import { useState } from 'react';
+
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const projects = [
     {
-      title: "FuturionPay - Écosystème Complet",
-      description: "Application mobile de gestion d'abonnements avec backend API. Développé en Kotlin Multiplatform pour le frontend et Laravel + GraphQL pour le backend.",
-      category: "🚀 Full-Stack - Mobile & Backend",
-      technologies: ["Kotlin", "KMP", "Jetpack Compose", "Laravel", "GraphQL", "Lighthouse", "MySQL"],
-      status: "🟢 Développé et testé",
-      demoType: "🎥 Démonstrations disponibles",
-      features: [
-        "Application mobile multiplateforme",
-        "API GraphQL moderne", 
-        "Gestion des abonnements",
-        "Système de paiement",
-        "Architecture scalable"
-      ],
-      note: "Projet complet full-stack - Code source et démonstrations sur demande"
+  id: 1,
+  title: "FuturionPay",
+  description: "Application mobile multiplateforme (iOS/Android) avec backend API Laravel pour la gestion d'abonnements partenaires. Expérience concrète en développement full-stack.",
+  category: "Développement Mobile",
+  technologies: ["Kotlin", "KMP", "Laravel", "GraphQL", "MySQL"],
+  status: "Projet Entreprise",
+  images: [
+    "/images/futurionPay/Capture1.png",
+    "/images/futurionPay/Capture2.png",
+    "/images/futurionPay/Capture3.png",
+    "/images/futurionPay/Capture4.png",
+    "/images/futurionPay/Capture5.png",
+    "/images/futurionPay/Capture6.png",
+    "/images/futurionPay/Capture7.png",
+    "/images/futurionPay/Capture8.png",
+    "/images/futurionPay/Capture9.png",
+    "/images/futurionPay/Capture10.png",
+    "/images/futurionPay/Capture11.png",
+    "/images/futurionPay/Capture12.png",
+    "/images/futurionPay/Capture13.png",
+    "/images/futurionPay/Capture14.png",
+    "/images/futurionPay/Capture15.png",
+    "/images/futurionPay/Capture16.png",
+    "/images/futurionPay/Capture17.png",
+    "/images/futurionPay/Capture18.png",
+    "/images/futurionPay/Capture19.png",
+    "/images/futurionPay/Capture20.png",
+    "/images/futurionPay/Capture21.png"
+  ]
+},
+    {
+      id: 2,
+      title: "TryHackMe - Labs SOC",
+      description: "Labs pratiques sur TryHackMe (Cyber Security 101) couvrant l'analyse réseau, sécurité Windows/Linux, et introduction aux outils défensifs.",
+      category: "Cybersécurité", 
+      technologies: ["TryHackMe", "Linux", "Wireshark", "Log Analysis", "Windows/AD"],
+      status: "En progression",
+      link: "https://tryhackme.com/p/kabreyazid12"
     },
     {
-      title: "Portfolio Développeur",
-      description: "Site portfolio moderne développé avec React, Next.js et Tailwind CSS. Design responsive et optimisé pour les recruteurs.",
-      category: "💻 Frontend - React/Next.js",
-      technologies: ["React", "Next.js", "Tailwind CSS", "JavaScript", "Git", "Vercel"],
-      status: "🟢 En ligne et actif",
-      demoType: "🌐 Site live - Vous êtes ici !",
-      features: [
-        "Design responsive et moderne",
-        "Optimisation SEO",
-        "Dark/Light mode",
-        "Animation fluides",
-        "Déploiement continu"
-      ],
-      note: "Développé en direct avec intégration des bonnes pratiques modernes"
-    },
-    {
-      title: "Outil Python Cybersécurité",
-      description: "Projet à venir en Python orienté analyse de sécurité - Scanner de vulnérabilités ou automate de tests de pénétration.",
-      category: "🐍 Python - Cybersécurité",
-      technologies: ["Python", "Sécurité", "Automation", "Analyse", "Rapports"],
-      status: "🟡 En réflexion",
-      demoType: "💡 Prochain projet collaboratif",
-      features: [
-        "Analyse automatisée",
-        "Génération de rapports",
-        "Tests de sécurité",
-        "Interface CLI ou web"
-      ],
-      note: "Prochain projet - Ouvert aux suggestions et collaboration"
+      id: 3,
+      title: "Script Python - Analyse Logs",
+      description: "Développement d'un script Python pour l'automatisation de l'analyse basique de logs et la détection de patterns suspects.",
+      category: "Python & Sécurité",
+      technologies: ["Python", "Log Analysis", "Automation", "Regex"],
+      status: "En développement"
     }
   ];
 
+  const openProjectModal = (project) => {
+    setSelectedProject(project);
+    setCurrentImageIndex(0);
+    document.body.style.overflow = 'hidden'; // Empêche le scroll de la page
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    document.body.style.overflow = 'auto'; // Réactive le scroll
+  };
+
+  const nextImage = () => {
+    if (selectedProject && selectedProject.images) {
+      setCurrentImageIndex((prev) => 
+        prev === selectedProject.images.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProject && selectedProject.images) {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? selectedProject.images.length - 1 : prev - 1
+      );
+    }
+  };
+
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-800">
-      <div className="container mx-auto px-6">
-        {/* Titre de section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            Mes Projets
-          </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Des projets concrets qui démontrent ma polyvalence technique et ma capacité à développer des solutions complètes
-          </p>
-        </div>
+    <>
+      <section id="projects" className="py-20 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-6">
+          {/* Titre simple */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+              Projets & Réalisations
+            </h2>
+            <div className="w-24 h-1 bg-[var(--primary-color)] mx-auto"></div>
+          </div>
 
-        {/* Grille des projets */}
-        <div className="space-y-8">
-          {projects.map((project, index) => (
-            <div 
-              key={project.title}
-              className="bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
-            >
-              {/* En-tête colorée */}
-              <div className={`h-2 ${
-                project.category.includes('Full-Stack') ? 'bg-gradient-to-r from-purple-500 to-blue-500' :
-                project.category.includes('Frontend') ? 'bg-gradient-to-r from-green-500 to-blue-500' :
-                'bg-gradient-to-r from-yellow-500 to-orange-500'
-              }`}></div>
+          {/* Grille simple - même hauteur */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div 
+                key={project.id}
+                className="bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 flex flex-col hover:shadow-xl transition-shadow duration-300"
+              >
+                {/* En-tête */}
+                <div className="mb-4">
+                  <span className="text-sm font-medium text-[var(--primary-color)]">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mt-1">
+                    {project.title}
+                  </h3>
+                </div>
 
-              <div className="p-6">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                  
-                  {/* Colonne gauche - Informations principales */}
-                  <div className="lg:w-2/3">
-                    {/* En-tête */}
-                    <div className="flex flex-wrap justify-between items-start mb-4">
-                      <div>
-                        <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                          {project.category}
-                        </span>
-                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mt-1">
-                          {project.title}
-                        </h3>
-                      </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        project.status.includes('🟢') ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' :
-                        project.status.includes('🟡') ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' :
-                        'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
-                      }`}>
-                        {project.status}
+                {/* Description */}
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm flex-1">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="mb-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs border border-gray-200 dark:border-gray-700"
+                      >
+                        {tech}
                       </span>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
-
-                    {/* Type de démo */}
-                    <div className="mb-4">
-                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                        {project.demoType}
-                      </span>
-                    </div>
-
-                    {/* Fonctionnalités */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2 text-sm">
-        🎯 Fonctionnalités principales :
-                      </h4>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-1">
-                        {project.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Colonne droite - Technologies et actions */}
-                  <div className="lg:w-1/3">
-                    {/* Technologies */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2 text-sm">
-                        🛠️ Technologies utilisées :
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <span 
-                            key={tech}
-                            className="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs border border-gray-200 dark:border-gray-700"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Note */}
-                    <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                      <p className="text-xs text-blue-700 dark:text-blue-300">
-                        <span className="font-semibold">ℹ️ </span> {project.note}
-                      </p>
-                    </div>
-
-                    {/* Bouton d'action */}
-                    <div className="mt-4">
-                      {project.title.includes("Portfolio") ? (
-                        <button className="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm">
-                          ✅ Vous visitez ce projet
-                        </button>
-                      ) : project.status.includes("🟡") ? (
-                        <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-4 py-2 rounded-lg font-medium transition-colors text-sm cursor-not-allowed">
-                          ⌛ En planification
-                        </button>
-                      ) : (
-                        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm">
-                          📧 Demander les détails
-                        </button>
-                      )}
-                    </div>
+                    ))}
                   </div>
                 </div>
+
+                {/* Statut et bouton */}
+                <div className="flex justify-between items-center mt-auto">
+                  <span className={`text-sm font-medium ${
+                    project.status === 'Projet Entreprise' ? 'text-green-600' :
+                    project.status === 'En progression' ? 'text-blue-600' :
+                    'text-yellow-600'
+                  }`}>
+                    {project.status}
+                  </span>
+                  
+                  {project.link ? (
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-[var(--primary-color)] hover:underline"
+                    >
+                      Voir →
+                    </a>
+                  ) : (
+                    <button 
+                      onClick={() => project.images ? openProjectModal(project) : {}}
+                      className="text-sm text-[var(--primary-color)] hover:underline"
+                    >
+                      Détails
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modal pour afficher les images */}
+      {selectedProject && selectedProject.images && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="relative bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            {/* Header modal */}
+            <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-800">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                  {selectedProject.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  {selectedProject.images.length} captures d'écran
+                </p>
+              </div>
+              <button
+                onClick={closeModal}
+                className="text-gray-500 hover:text-gray-800 dark:hover:text-white text-2xl"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Image container */}
+            <div className="relative h-96 md:h-[500px] bg-gray-100 dark:bg-gray-800">
+              <img
+                src={selectedProject.images[currentImageIndex]}
+                alt={`${selectedProject.title} - Capture ${currentImageIndex + 1}`}
+                className="w-full h-full object-contain p-4"
+              />
+              
+              {/* Navigation buttons */}
+              {selectedProject.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-700"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 dark:bg-gray-800/90 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-700"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </>
+              )}
+
+              {/* Image indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                {selectedProject.images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-3 h-3 rounded-full ${
+                      index === currentImageIndex 
+                        ? 'bg-[var(--primary-color)]' 
+                        : 'bg-gray-400 dark:bg-gray-600'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Section collaboration */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-8 text-center text-white shadow-xl">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">🤝 Projet Collaboratif</h3>
-            <p className="text-lg mb-6">
-              Je suis ouvert à développer un projet ensemble ! Que ce soit une application web, 
-              un outil de cybersécurité ou une solution innovante, n'hésitez pas à me contacter.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="bg-blue-500 px-4 py-2 rounded-full text-sm">Projets Python</span>
-              <span className="bg-blue-500 px-4 py-2 rounded-full text-sm">Applications Web</span>
-              <span className="bg-blue-500 px-4 py-2 rounded-full text-sm">Outils Cybersécurité</span>
+            {/* Footer modal */}
+            <div className="p-6 border-t border-gray-200 dark:border-gray-800">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                {selectedProject.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {selectedProject.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      )}
+    </>
   );
 }
