@@ -114,7 +114,7 @@ export default function Contact() {
             <div className="mb-8 p-6 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
               <h4 className="font-semibold text-[var(--primary-color)] dark:text-red-300 mb-3 text-center text-lg">Disponibilité</h4>
               <p className="text-[var(--primary-color)] dark:text-red-400 text-center">
-                Actuellement en Master Cybersécurité à HESTIM - À la recherche d'un stage de fin d'études (PFA) en tant qu'analyste SOC
+                Actuellement en Master Cybersécurité à HESTIM - À la recherche d'un stage de fin d'année (PFA) en tant qu'analyste SOC
               </p>
             </div>
 
