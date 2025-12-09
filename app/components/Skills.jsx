@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from 'react';
+
 export default function Skills() {
   return (
     <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -13,17 +17,17 @@ export default function Skills() {
         {/* Grille des compétences - Même hauteur */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* 🛡️ CARTE CYBERSÉCURITÉ - Simplifiée */}
+          {/* ⚔️ CARTE SÉCURITÉ OFFENSIVE */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-l-4 border-[var(--primary-color)] flex flex-col">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mr-4">
-                <span className="text-2xl">🛡️</span>
+                <span className="text-2xl">⚔️</span>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                  Cybersécurité
+                  Sécurité Offensive
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">TryHackMe & Cisco</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Pentest & TryHackMe</p>
               </div>
             </div>
             
@@ -61,7 +65,7 @@ export default function Skills() {
                 Domaines d'apprentissage :
               </h4>
               <div className="space-y-2">
-                {['Fondamentaux Sécurité', 'Réseaux TCP/IP', 'Linux & Windows/AD', 'Analyse de Logs', 'Outils défensifs'].map((domain) => (
+              {['Tests d\'intrusion', 'Exploitation vulnérabilités', 'Outils pentest (Nmap, Burp,etc...)', 'Analyse sécurité web'].map((domain) => (
                   <div key={domain} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                     <span className="w-2 h-2 bg-[var(--primary-color)] rounded-full mr-2"></span>
                     {domain}
@@ -90,13 +94,13 @@ export default function Skills() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                   Développement
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Full-Stack & Python</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Web & Mobile</p>
               </div>
             </div>
             
             <div className="flex-1">
               <div className="flex flex-wrap gap-2 mb-4">
-                {['Python (Security)', 'React', 'Next.js', 'JavaScript', 'Laravel', 'GraphQL', 'MySQL', 'GitHub'].map((tech) => (
+                {['Python (Security)', 'React', 'Next.js', 'JavaScript', 'Laravel', 'Kotlin', 'MySQL', 'GitHub'].map((tech) => (
                   <span 
                     key={tech}
                     className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm"
@@ -108,27 +112,27 @@ export default function Skills() {
             </div>
 
             <div className="text-sm text-gray-600 dark:text-gray-400 mt-auto">
-              Développement web & scripts sécurité Python
+              Développement web & mobile, scripts Python
             </div>
           </div>
 
-          {/* 📱 CARTE MOBILE */}
+          {/* 🛡️ CARTE SÉCURITÉ BASES */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-l-4 border-green-500 flex flex-col">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
-                <span className="text-2xl">📱</span>
+                <span className="text-2xl">🛡️</span>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                  Mobile
+                  Fondamentaux
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Android & Kotlin</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Cybersécurité</p>
               </div>
             </div>
             
             <div className="flex-1">
               <div className="flex flex-wrap gap-2 mb-4">
-                {['Kotlin', 'KMP', 'Jetpack Compose', 'Android Studio', 'App Security'].map((tech) => (
+                {['TCP/IP Networking', 'Linux Command Line', 'Windows/AD Basics', 'Cryptography', 'Log Analysis', 'Vulnerability Concepts'].map((tech) => (
                   <span 
                     key={tech}
                     className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm"
@@ -140,7 +144,7 @@ export default function Skills() {
             </div>
 
             <div className="text-sm text-gray-600 dark:text-gray-400 mt-auto">
-              Applications mobiles & compréhension sécurité Android
+              Bases essentielles pour le pentest et analyse sécurité
             </div>
           </div>
         </div>

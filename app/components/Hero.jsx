@@ -17,7 +17,7 @@ export default function Hero() {
           Yazid KABRE
         </h1>
         <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8">
-          Étudiant en Cybersécurité 
+          Étudiant en Cybersécurité (Ecole d'ingénieur)
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a

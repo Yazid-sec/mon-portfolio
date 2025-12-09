@@ -9,7 +9,7 @@ export default function Contact() {
           </h2>
           <div className="w-24 h-1 bg-[var(--primary-color)] mx-auto mb-4"></div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Discutons d'opportunités en cybersécurité défensive, ou échangeons autour de la sécurité des applications et du monitoring
+            Discutons d'opportunités en pentest, tests d'intrusion ou échangeons autour de la sécurité offensive
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function Contact() {
                     github.com/Yazid-sec
                   </a>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    Projets Python sécurité & développement
+                    Projets
                   </p>
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function Contact() {
             <div className="mb-8 p-6 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
               <h4 className="font-semibold text-[var(--primary-color)] dark:text-red-300 mb-3 text-center text-lg">Disponibilité</h4>
               <p className="text-[var(--primary-color)] dark:text-red-400 text-center">
-                Actuellement en Master Cybersécurité à HESTIM - À la recherche d'un stage de fin d'année (PFA) en tant qu'analyste SOC
+                Actuellement en Ingénieurie informatique <i class="fa fa-optin-monster" aria-hidden="true"></i> Cybersécurité à HESTIM - je suis à la recherche d'un PFA en tant que pentester / testeur d'intrusion
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
               
               <div className="text-gray-600 dark:text-gray-300 text-center mb-6">
                 <p className="text-lg">
-                  Je recherche un PFA en tant qu'<span className="text-[var(--primary-color)] font-semibold">analyste SOC</span> pour appliquer mes compétences en monitoring, analyse de logs et détection d'incidents
+                  Je recherche un PFA en tant que <span className="text-[var(--primary-color)] font-semibold">pentester</span> pour appliquer mes compétences en tests d'intrusion, exploitation de vulnérabilités et sécurité offensive
                 </p>
               </div>
 

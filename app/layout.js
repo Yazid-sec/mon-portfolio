@@ -12,31 +12,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Yazid KABRE | Étudiant Cybersécurité - Recherche PFA SOC",
-  description: "Étudiant en Master Cybersécurité à HESTIM, en recherche d'un projet de fin d'année (PFA) en tant qu'analyste SOC. Formation pratique sur TryHackMe, compétences en réseau (Cisco 88.5%), Python sécurité, et développement full-stack.",
+  title: "Yazid KABRE | Étudiant Cybersécurité - Recherche PFA Pentest",
+  description: "Étudiant en Master Cybersécurité à HESTIM, en recherche d'un PFA en tant que pentester. Formation pratique sur TryHackMe, compétences en tests d'intrusion, exploitation de vulnérabilités et développement d'outils de sécurité offensive.",
   keywords: [
     "étudiant cybersécurité Maroc",
-    "recherche PFA SOC analyst",
-    "projet de fin d'année cybersécurité",
-    "stage SOC analyst Casablanca",
-    "TryHackMe Cyber Security 101",
-    "Cisco Networking 88.5%",
+    "recherche PFA pentest",
+    "testeur d'intrusion stage",
+    "TryHackMe pentest",
+    "exploitation vulnérabilités",
+    "tests d'intrusion",
+    "OWASP Top 10",
+    "outils pentest",
+    "sécurité offensive",
+    "HESTIM cybersécurité",
+    "développeur web mobile sécurité",
     "Python sécurité",
-    "analyse de logs",
-    "HESTIM cybersécurité"
+    "Cisco Networking 88.5%"
   ].join(", "),
   authors: [{ name: "Yazid KABRE" }],
   openGraph: {
-    title: "Yazid KABRE - Portfolio Étudiant Cybersécurité",
-    description: "Étudiant en cybersécurité recherchant un PFA en tant qu'analyste SOC. Formation TryHackMe et compétences développement.",
-    url: "https://yazid-kabre-portfolio.vercel.app",
-    siteName: "Yazid KABRE - Portfolio",
+    title: "Yazid KABRE - Portfolio Pentest & Cybersécurité",
+    description: "Portfolio d'un étudiant en cybersécurité spécialisé pentest. Formation TryHackMe, compétences tests d'intrusion et développement sécurité.",
+    url: "https://yazid-pentest-portfolio.vercel.app",
+    siteName: "Yazid KABRE - Portfolio Pentest",
     images: [
       {
         url: "/images/linkdin_pic.jpg",
         width: 800,
         height: 600,
-        alt: "Photo profil Yazid KABRE",
+        alt: "Yazid KABRE - Étudiant Cybersécurité Pentest",
       },
     ],
     locale: "fr_FR",
@@ -48,8 +52,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yazid KABRE | Portfolio Cybersécurité",
-    description: "Étudiant en cybersécurité - Recherche PFA SOC Analyst",
+    title: "Yazid KABRE | Portfolio Pentest",
+    description: "Étudiant en cybersécurité - Recherche PFA Pentester",
+    images: ["/images/linkdin_pic.jpg"],
   },
 };
 
@@ -65,11 +70,11 @@ export default function RootLayout({ children }) {
         {/* Localisation pour recruteurs marocains */}
         <meta name="geo.region" content="MA" />
         <meta name="geo.placename" content="Casablanca, Settat" />
-        <meta name="target" content="recrutement, stage, PFA" />
+        <meta name="target" content="recrutement, stage, PFA, pentest" />
         
         {/* Type de contenu */}
         <meta property="og:type" content="portfolio" />
-        <meta name="classification" content="Portfolio étudiant" />
+        <meta name="classification" content="Portfolio étudiant cybersécurité" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}

@@ -11,14 +11,14 @@ export default function Footer() {
               © {currentYear} Yazid KABRE
             </p>
             <p className="text-gray-500 text-xs mt-1">
-              Étudiant en Cybersécurité | SOC Analyst en formation
+              Étudiant en Cybersécurité | Pentester en formation
             </p>
           </div>
 
           {/* Version */}
           <div className="mt-4 md:mt-0">
             <span className="text-gray-500 text-xs">
-              v2.0 - Portfolio SOC
+              v2.0 - Portfolio Pentest
             </span>
           </div>
         </div>

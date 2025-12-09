@@ -9,7 +9,7 @@ export default function Projects() {
     {
   id: 1,
   title: "FuturionPay",
-  description: "Application mobile multiplateforme (iOS/Android) avec backend API Laravel pour la gestion d'abonnements partenaires. Expérience concrète en développement full-stack.",
+  description: "Application mobile multiplateforme (iOS/Android) avec backend API Laravel pour la gestion d'abonnements des partenaires de Futurion",
   category: "Développement Mobile",
   technologies: ["Kotlin", "KMP", "Laravel", "GraphQL", "MySQL"],
   status: "Projet Entreprise",
@@ -40,7 +40,7 @@ export default function Projects() {
     {
       id: 2,
       title: "TryHackMe - Labs SOC",
-      description: "Labs pratiques sur TryHackMe (Cyber Security 101) couvrant l'analyse réseau, sécurité Windows/Linux, et introduction aux outils défensifs.",
+      description: "Labs pratiques sur TryHackMe (Cyber Security 101) couvrant l'analyse réseau, sécurité Windows/Linux, et introduction aux outils offensive et defensive.",
       category: "Cybersécurité", 
       technologies: ["TryHackMe", "Linux", "Wireshark", "Log Analysis", "Windows/AD"],
       status: "En progression",
@@ -49,9 +49,9 @@ export default function Projects() {
     {
       id: 3,
       title: "Script Python - Analyse Logs",
-      description: "Développement d'un script Python pour l'automatisation de l'analyse basique de logs et la détection de patterns suspects.",
+      description: "Développement d'un script Python pour l'automatisation.",
       category: "Python & Sécurité",
-      technologies: ["Python", "Log Analysis", "Automation", "Regex"],
+      technologies: ["Python", "Automation", "Regex"],
       status: "En développement"
     }
   ];
