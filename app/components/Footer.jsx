@@ -11,7 +11,7 @@ export default function Footer() {
               © {currentYear} Yazid KABRE
             </p>
             <p className="text-gray-500 text-xs mt-1">
-              Étudiant en Cybersécurité | Pentester en formation
+              Étudiant en Cybersécurité | Ecole d'ingénieur
             </p>
           </div>
 
