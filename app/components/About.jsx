@@ -58,14 +58,41 @@ export default function About() {
             </div>
 
             {/* Stats avec theme rouge */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-              <div className="text-center p-4 bg-red-50 dark:bg-gray-800 rounded-lg border border-red-100 dark:border-gray-700 shadow-sm">
-                <div className="text-gray-600 dark:text-gray-300">Certificat Fondamentaux Cisco Networking</div>
-              </div>
-              <div className="text-center p-4 bg-red-50 dark:bg-gray-800 rounded-lg border border-red-100 dark:border-gray-700 shadow-sm">
-                <div className="text-gray-600 dark:text-gray-300">Certificat Cyber Security 101 TryHackMe (en cours)</div>
-              </div>
-            </div>
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+
+  {/* Boîte 1 */}
+  <div className="flex items-center justify-center text-center p-6 bg-red-50 dark:bg-gray-800 rounded-lg border border-red-100 dark:border-gray-700 shadow-sm min-h-[160px]">
+    <div className="text-gray-600 dark:text-gray-300">
+      Certificat Fondamentaux Cisco Networking
+    </div>
+  </div>
+
+  {/* Boîte 2 */}
+  <div className="flex items-center justify-center text-center p-6 bg-red-50 dark:bg-gray-800 rounded-lg border border-red-100 dark:border-gray-700 shadow-sm min-h-[160px]">
+    <div className="text-gray-600 dark:text-gray-300">
+      Certificat Cyber Security 101 TryHackMe (en cours)
+    </div>
+  </div>
+
+  {/* Boîte 3 (Badge Credly) */}
+  <div className="flex items-center justify-center p-6 bg-red-50 dark:bg-gray-800 rounded-lg border border-red-100 dark:border-gray-700 shadow-sm min-h-[160px]">
+    <div className="flex justify-center">
+      <div
+        data-iframe-width="150"
+        data-iframe-height="270"
+        data-share-badge-id="4a641cb8-478d-4b6e-87d7-5ab6dbb700a4"
+        data-share-badge-host="https://www.credly.com"
+      ></div>
+      <script
+        type="text/javascript"
+        async
+        src="//cdn.credly.com/assets/utilities/embed.js"
+      ></script>
+    </div>
+  </div>
+
+</div>
+
           </div>
         </div>
       </div>
