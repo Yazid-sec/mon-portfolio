@@ -48,8 +48,8 @@ export default function Skills() {
             {/* Score Cisco */}
             <div className="mb-6">
               <div className="flex justify-between text-sm mb-1">
-                <span>Cisco Networking</span>
-                <span className="font-bold text-[var(--primary-color)]">88.5%</span>
+                <span>Cisco Networking Bsics</span>
+                <span className="font-bold text-[var(--primary-color)]">Scored 88.5%</span>
               </div>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                 <div 
